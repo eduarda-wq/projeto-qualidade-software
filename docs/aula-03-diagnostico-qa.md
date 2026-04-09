@@ -3,7 +3,7 @@
 > Disciplina: Qualidade de Software  
 > Aula 3 – Papéis, Responsabilidades e Práticas de QA  
 > Equipe: asgurias
-> Integrantes: Amanda Duarte e Eduarda Costa 
+> Integrantes: Amanda Duarte, Eduarda Costa e Luísa Rabassa
 
 ---
 
