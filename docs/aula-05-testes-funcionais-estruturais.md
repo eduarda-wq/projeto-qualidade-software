@@ -1,18 +1,18 @@
 # Testes Funcionais vs Estruturais - LocalEats
 
-**Funcionalidade Escolhida:** Busca de Restaurantes por Culinária
+**Funcionalidade Escolhida:** Busca de Restaurantes
 
-## 1. Visão do Utilizador (Teste Caixa-Preta)
-Focamos nos requisitos funcionais e na experiência final sem analisar o código interno:
-* **Cenário Positivo:** Inserir "Italiana" no campo de busca. **Esperado:** Listagem de pizzarias e cantinas italianas.
-* **Cenário de Limite:** Inserir termos muito longos ou com emojis. **Esperado:** O sistema deve sanitizar a entrada e não quebrar o layout.
-* **Cenário de Erro:** Busca sem resultados. **Esperado:** Exibir mensagem clara "Nenhum restaurante encontrado para este termo".
+## 1. Visão do Usuário (Teste Caixa-Preta)
+Validamos o comportamento esperado sem acesso ao código:
+* **Cenário de Sucesso:** Buscar "Italiana" em "Pelotas". Resultado: Listagem apenas de restaurantes italianos ativos na cidade.
+* **Cenário de Erro:** Busca por termos com caracteres especiais ou nulos. Resultado: O sistema deve sanitizar a entrada e não exibir erro de servidor.
+* **Cenário de Performance:** Realizar busca simultânea com múltiplos filtros. Resultado: Retorno em menos de 2 segundos.
 
 ## 2. Visão do Desenvolvedor (Teste Caixa-Branca)
-Focamos na estrutura lógica e caminhos do código:
-* **Cobertura de Decisão:** Testar se o `if` que filtra a categoria é *Case Insensitive* (aceita "pizza" e "PIZZA").
-* **Tratamento de Exceções:** Validar se o código possui um `try-catch` para quando o banco de dados demora a responder (Timeout), evitando a "tela branca".
-* **Lógica de Ordenação:** Garantir que o loop de resultados prioriza restaurantes abertos sobre os fechados.
+Validamos a estrutura lógica interna:
+* **Lógica de Comparação:** Testar se a query SQL utiliza `LIKE %termo%` e se o código trata diferenças entre maiúsculas e minúsculas (*Case Insensitive*).
+* **Cobertura de Fluxo:** Garantir que o `if/else` que valida o status do restaurante (Aberto/Fechado) está funcionando para não exibir locais inativos na busca.
+* **Tratamento de Exceções:** Validar se existe um `try-catch` para erros de conexão com o banco de dados, evitando a "tela branca" relatada.
 
 ## 3. Reflexão Crítica
-A análise técnica (evidenciada no print `inspecao_tecnica.png`) sugere que os problemas de "resultados incorretos" decorrem de falhas na lógica de filtragem da API. Enquanto a Caixa-Preta valida se o utilizador está satisfeito, a Caixa-Branca é o que permitirá à equipa encontrar o erro de lógica no backend que mistura categorias de restaurantes.
+O teste de Caixa-Preta é vital para garantir que o morador local encontre o que deseja. No entanto, para resolver o bug de "resultados incorretos", o teste de **Caixa-Branca** é superior, pois permite identificar falhas na lógica de filtragem da API que a visão externa não consegue mapear.
