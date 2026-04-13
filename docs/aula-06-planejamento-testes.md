@@ -1,207 +1,27 @@
-# Aula 6 – Planejamento e Execução de Testes
-
-> Disciplina: Qualidade de Software  
-> Projeto: LocalEats  
-> Integrantes do grupo:  
-> - Nome 1  
-> - Nome 2  
-> - Nome 3  
-> - Nome 4  
-
----
-
-# 1. Plano de Testes
-
-## 1.1 Objetivo
-Descreva o objetivo do plano de testes.
-
-> Exemplo: Validar as principais funcionalidades do sistema LocalEats, garantindo que atendam aos requisitos esperados e apresentem comportamento consistente.
-
----
-
-## 1.2 Escopo
-
-### O que será testado
-- [Funcionalidade 1]
-- [Funcionalidade 2]
-- [Funcionalidade 3]
-
-### O que NÃO será testado
-- [Exemplo: integração com sistemas externos]
-- [Outros itens fora do escopo]
-
----
-
-## 1.3 Funcionalidades selecionadas
-Liste as funcionalidades que serão foco dos testes:
-
-- [Login/Cadastro]
-- [Busca de restaurantes]
-- [Pedido]
-- [Avaliação]
-- [Outra]
-
----
-
-## 1.4 Estratégia de Testes
-
-Descreva como os testes serão realizados.
-
-- Tipos de teste:
-  - ( ) Funcional
-  - ( ) Usabilidade
-  - ( ) Outros: _______
-
-- Abordagem:
-  > Exemplo: testes manuais baseados em cenários definidos previamente
-
----
-
-## 1.5 Responsáveis
-
-Defina os papéis na equipe:
-
-| Nome | Responsabilidade |
-|------|----------------|
-|      |                |
-|      |                |
-
----
-
-# 2. Casos de Teste
-
-Crie no mínimo 5 casos de teste.
-
----
-
-## CT-01 – [Título do teste]
-
-**Pré-condição:**  
-[Descrever condição necessária antes do teste]
-
-**Passos:**  
-1.  
-2.  
-3.  
-
-**Dados de entrada (se aplicável):**  
-[Descrever]
-
-**Resultado esperado:**  
-[Descrever claramente o que deve acontecer]
-
----
-
-## CT-02 – [Título do teste]
-
-**Pré-condição:**  
-
-**Passos:**  
-1.  
-2.  
-3.  
-
-**Dados de entrada (se aplicável):**  
-
-**Resultado esperado:**  
-
----
-
-## CT-03 – [Título do teste]
-
-**Pré-condição:**  
-
-**Passos:**  
-1.  
-2.  
-3.  
-
-**Dados de entrada (se aplicável):**  
-
-**Resultado esperado:**  
-
----
-
-## CT-04 – [Título do teste]
-
-**Pré-condição:**  
-
-**Passos:**  
-1.  
-2.  
-3.  
-
-**Dados de entrada (se aplicável):**  
-
-**Resultado esperado:**  
-
----
-
-## CT-05 – [Título do teste]
-
-**Pré-condição:**  
-
-**Passos:**  
-1.  
-2.  
-3.  
-
-**Dados de entrada (se aplicável):**  
-
-**Resultado esperado:**  
-
----
-
-# 3. Execução dos Testes
-
-Preencha a tabela com os resultados obtidos.
-
-| ID     | Resultado (Passou/Falhou) | Evidência (descrição ou print) |
-|--------|--------------------------|--------------------------------|
-| CT-01  |                          |                                |
-| CT-02  |                          |                                |
-| CT-03  |                          |                                |
-| CT-04  |                          |                                |
-| CT-05  |                          |                                |
-
----
-
-# 4. Análise dos Resultados
-
-- Quantidade de testes executados:  
-- Quantidade de testes que passaram:  
-- Quantidade de testes que falharam:  
-
-## Principais problemas encontrados
-- [Problema 1]
-- [Problema 2]
-- [Problema 3]
-
----
-
-# 5. Reflexão
-
-Responda às questões abaixo:
-
-- O plano de testes ajudou a organizar melhor o processo? Por quê?
-
-- Algum problema só foi identificado durante a execução? Explique.
-
-- O que o grupo melhoraria no processo de testes?
-
----
-
-## Conclusão
-
-Descreva se o comportamento da funcionalidade foi considerado aceitável e por quê.
-
----
-
-# 6. Conclusão Geral
-
-Faça um resumo final:
-
-- Qualidade geral do sistema testado
-- Principais pontos positivos
-- Principais problemas identificados
-- Impressão geral do grupo sobre o processo de testes
+# Planejamento e Execução de Testes - LocalEats
+
+**Integrantes:** Eduarda, Amanda e Luísa
+**Sistema Alvo:** [LocalEats Vercel](https://local-eats-unisenac.vercel.app/)
+
+## 1. Plano de Testes
+- **Objetivo:** Validar a estabilidade das funcionalidades de busca e a adaptabilidade da interface em dispositivos móveis.
+- **Escopo:** Página Inicial, Barra de Pesquisa, Login e Responsividade Mobile.
+- **Critério de Aceitação:** O sistema deve filtrar corretamente os dados e ser 100% utilizável em telas pequenas (iPhone SE/Android).
+
+## 2. Registro de Execução e Evidências
+
+| ID | Descrição | Status | Observações Críticas | Evidência Visual |
+| :--- | :--- | :--- | :--- | :--- |
+| **CT-01** | Busca por Culinária | **FALHOU** | Resultados irrelevantes (ex: busca por 'Pizza' retornou 'Churrascaria'). | ![Busca](../artefatos/evidencias/busca_incorreta.png) |
+| **CT-02** | Responsividade (Geral) | **FALHOU** | Elementos sobrepostos e textos cortados impedem a leitura. | ![Layout 1](../artefatos/evidencias/layout_mobile_quebrado_01.png) |
+| **CT-03** | Menu/Interação Mobile | **FALHOU** | Dificuldade em clicar nos botões devido ao tamanho e posição. | ![Layout 2](../artefatos/evidencias/layout_mobile_quebrado_02.png) |
+| **CT-04** | Inspeção de Rede | **ANALISADO** | Identificados gargalos de carregamento via Console/Network. | ![Inspeção](../artefatos/evidencias/inspecao_tecnica.png) |
+
+## 3. Análise Detalhada dos Resultados
+A execução dos testes confirmou as hipóteses levantadas na estratégia inicial:
+1. **Falha de Backend:** O motor de busca não está filtrando por categorias exatas, o que gera frustração no usuário (ver `busca_incorreta.png`).
+2. **Falha de Frontend:** O layout quebra drasticamente em resoluções mobile. Conforme as evidências `layout_mobile_quebrado_01.png` e `layout_mobile_quebrado_02.png`, o usuário é incapaz de navegar ou fazer login de forma intuitiva.
+3. **Performance:** A análise técnica (`inspecao_tecnica.png`) revelou requisições pendentes que explicam a lentidão relatada.
+
+## 4. Conclusão e Recomendações
+Recomendamos a revisão imediata do arquivo de estilos (CSS) para dispositivos móveis e a refatoração da lógica de busca no banco de dados. Sem essas correções, a taxa de rejeição do LocalEats continuará alta.
