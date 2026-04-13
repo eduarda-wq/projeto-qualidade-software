@@ -2,27 +2,24 @@
 
 **Integrantes:** Eduarda, Amanda e Luísa
 
-## 1. Funcionalidades Principais e Priorização
-Identificamos as funcionalidades críticas baseando-nos no impacto direto na experiência do utilizador e na conversão de vendas:
+## 1. Funcionalidades Críticas e Priorização
+Com base nos problemas relatados (lentidão, busca incorreta e falhas mobile), priorizamos:
 
-1.  **Motor de Busca:** Crítico para resolver o problema de resultados irrelevantes.
-2.  **Checkout e Finalização de Pedido:** Vital para o negócio; qualquer falha aqui impede a receita.
-3.  **Login e Sessão:** Necessário para manter o utilizador autenticado e evitar erros de permissão.
-4.  **Sistema de Avaliações:** Foco em corrigir a persistência de dados (evitar que sumam após refresh).
+1. **Busca de Restaurantes:** Alta Prioridade. É a porta de entrada do usuário; falhas aqui geram abandono imediato.
+2. **Finalização de Pedido (Checkout):** Crítica. Qualquer erro aqui impede o faturamento dos restaurantes parceiros.
+3. **Login e Cadastro:** Alta Prioridade. Essencial para a personalização e segurança dos dados.
+4. **Sistema de Avaliações:** Média Prioridade. Foco em corrigir a persistência de dados (bug do refresh).
 
-## 2. Análise de Risco (RBT - Risk Based Testing)
-| Funcionalidade | Risco Identificado | Impacto | Prioridade |
-| :--- | :--- | :--- | :--- |
-| **Checkout** | Falha técnica impede a conclusão da compra. | Alto | Crítica |
-| **Busca** | Resultados incorretos geram desconfiança na plataforma. | Alto | Alta |
-| **Performance** | Lentidão em picos causa abandono do site/app. | Médio | Alta |
-| **Favoritos** | Erro funcional incomoda, mas não impede a compra. | Baixo | Baixa |
+## 2. Análise de Risco
+* **Risco Técnico:** Lentidão em horários de pico (escala).
+* **Risco de Negócio:** Resultados de busca irrelevantes diminuem a confiança dos comerciantes locais.
+* **Risco de UI:** Inconsistência entre Web e Mobile prejudica a imagem da marca.
 
-## 3. Estratégia de Pirâmide de Testes
-Decidimos distribuir o esforço de teste da seguinte forma para otimizar custos e velocidade:
-* **Testes Unitários (60%):** Validar as funções de filtro de busca e lógica de cálculo de preços de forma isolada.
-* **Testes de Integração (30%):** Garantir que a comunicação entre o Frontend e a API de avaliações não perca dados.
-* **Testes E2E (10%):** Simular o fluxo completo: "Turista busca restaurante -> Seleciona prato -> Finaliza pedido".
+## 3. Pirâmide de Testes
+Nossa estratégia foca na automação eficiente:
+* **Testes Unitários (60%):** Validar isoladamente os filtros de busca e lógica de cálculo de frete. São rápidos e garantem que o "coração" do código funcione.
+* **Testes de Integração (30%):** Garantir que a API de avaliações se comunique corretamente com o banco de dados para evitar perda de dados.
+* **Testes E2E (10%):** Validar apenas os fluxos críticos de compra, simulando um usuário real desde a busca até o pagamento.
 
 ## 4. Testes em Produção
-Propomos o uso de **Feature Flags** para testar o novo algoritmo de busca com 5% dos utilizadores. Além disso, as evidências coletadas (ver pasta de artefatos) demonstram que o monitoramento de erros em tempo real é urgente para mitigar a lentidão relatada nos horários de pico.
+Propomos o uso de **Feature Flags** (lançamento gradual) para novas versões da busca e **Monitoramento Ativo (Sentry)** para capturar erros de timeout em tempo real durante os horários de pico, permitindo uma resposta rápida da equipe técnica.
