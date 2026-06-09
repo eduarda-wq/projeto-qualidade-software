@@ -9,6 +9,8 @@
 Este repositório reúne as atividades práticas desenvolvidas na disciplina de **Qualidade de Software**, utilizando a metodologia **PBL (Problem-Based Learning)**. O foco do projeto é a análise e melhoria da qualidade da plataforma **LocalEats**.
 
 ## 📚 Organização do Projeto
+- `src/` → Código-fonte das regras de negócio do ecossistema.
+- `tests/` → Scripts e cenários de automação de testes (Pytest).
 - `docs/` → Documentação técnica e resoluções das atividades de aula.
 - `artefatos/evidencias/` → Prints e registros da execução dos testes.
 - `referencias/` → Materiais de apoio e normas (ISO 25000).
@@ -22,12 +24,16 @@ Este repositório reúne as atividades práticas desenvolvidas na disciplina de 
 | **Aula 04** | Estratégia Inicial de Testes | ✅ Finalizado | [Ver arquivo](docs/aula-04-estrategia-inicial-testes.md) |
 | **Aula 05** | Testes Funcionais vs Estruturais | ✅ Finalizado | [Ver arquivo](docs/aula-05-testes-funcionais-estruturais.md) |
 | **Aula 06** | Planejamento e Execução (com Evidências) | ✅ Finalizado | [Ver arquivo](docs/aula-06-planejamento-testes.md) |
+| **PBL 6** | Testes Unitários Automatizados e TDD | ✅ Finalizado | [Ver arquivo](docs/aula-09-testes-unitarios-tdd.md) |
+| **PBL 7** | Testes Funcionais Automatizados (Playwright) | ✅ Finalizado | [Ver arquivo](docs/aula-10-testes-funcionais-automatizados.md) |
+| **PBL 8** | BDD e Automação Orientada a Comportamento | ✅ Finalizado | [Ver arquivo](docs/aula-12-bdd-automacao-comportamento.md) |
 
 ## 🧩 Metodologia
 Utilizamos a Aprendizagem Baseada em Problemas para simular um ambiente real de consultoria em QA. O projeto foca em:
 - Análise de Riscos.
 - Planejamento estratégico de testes (Pirâmide de Testes).
 - Execução manual e registro de evidências críticas.
+- Garantia de qualidade e regressão via automação em código com TDD.
 
 ---
 *Este repositório é mantido como parte da avaliação acadêmica no Centro Universitário Senac-RS.*
