@@ -1,0 +1,19 @@
+name: Pipeline de Qualidade LocalEats
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.14' # ou a versão que usas
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest pytest-bdd playwright
+          playwright install
+      - name: Run Tests
+        run: pytest
