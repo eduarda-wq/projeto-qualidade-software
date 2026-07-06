@@ -27,13 +27,17 @@ Este repositório reúne as atividades práticas desenvolvidas na disciplina de 
 | **PBL 6** | Testes Unitários Automatizados e TDD | ✅ Finalizado | [Ver arquivo](docs/aula-09-testes-unitarios-tdd.md) |
 | **PBL 7** | Testes Funcionais Automatizados (Playwright) | ✅ Finalizado | [Ver arquivo](docs/aula-10-testes-funcionais-automatizados.md) |
 | **PBL 8** | BDD e Automação Orientada a Comportamento | ✅ Finalizado | [Ver arquivo](docs/aula-12-bdd-automacao-comportamento.md) |
+| **PBL 9** | Mapeamento e Qualidade de Processo | ✅ Finalizado | [Ver arquivo](docs/aula-14-qualidade-processo.md) |
+| **PBL 10** | Modelos de Maturidade (CMMI / MPS.BR) | ✅ Finalizado | [Ver arquivo](docs/aula-15-modelos-maturidade.md) |
+| **PBL 11** | Qualidade em Metodologias Ágeis | ✅ Finalizado | [Ver arquivo](docs/aula-16-qualidade-metodologias-ageis.md) |
+| **PBL 12** | Integração Contínua (CI) e Gestão de Defeitos | ✅ Finalizado | [Ver arquivo](docs/aula-17-integracao-continua-qualidade.md) |
 
 ## 🧩 Metodologia
 Utilizamos a Aprendizagem Baseada em Problemas para simular um ambiente real de consultoria em QA. O projeto foca em:
 - Análise de Riscos.
 - Planejamento estratégico de testes (Pirâmide de Testes).
 - Execução manual e registro de evidências críticas.
-- Garantia de qualidade e regressão via automação em código com TDD.
+- Garantia de qualidade e regressão via automação em código com TDD, BDD e Integração Contínua (CI).
 
 ---
 *Este repositório é mantido como parte da avaliação acadêmica no Centro Universitário Senac-RS.*
